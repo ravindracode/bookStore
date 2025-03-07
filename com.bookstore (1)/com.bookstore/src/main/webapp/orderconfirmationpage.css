@@ -1,0 +1,236 @@
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes checkmarkCircle {
+    0% {
+        stroke-dashoffset: 166;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes checkmarkCheck {
+    0% {
+        stroke-dashoffset: 66;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: linear-gradient(-45deg, #00b09b, #96c93d, #00b09b, #96c93d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    perspective: 1000px;
+}
+
+.confirmation-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    animation: slideIn 0.6s ease-out forwards;
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.confirmation-card:hover {
+    transform: translateY(-5px) rotateX(2deg);
+}
+
+.check-container {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #00b09b;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0 0 0 #00b09b;
+    animation: checkmarkFill 0.4s ease-in-out 0.4s forwards;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: checkmarkCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.3s forwards;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkmarkCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+.title {
+    color: #00b09b;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: slideIn 0.6s ease-out 0.3s forwards;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message {
+    color: #2d3748;
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0;
+    animation: slideIn 0.6s ease-out 0.4s forwards;
+}
+
+.order-details {
+    background: rgba(247, 250, 252, 0.8);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    opacity: 0;
+    animation: slideIn 0.6s ease-out 0.5s forwards;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #2d3748;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-item span:first-child {
+    color: #718096;
+    font-weight: 500;
+}
+
+.detail-item span:last-child {
+    font-weight: 600;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    animation: slideIn 0.6s ease-out 0.6s forwards;
+}
+
+.track-button, .continue-button {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-button {
+    background: #00b09b;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.3);
+}
+
+.continue-button {
+    background: #f8f9fa;
+    color: #2d3748;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.track-button:hover, .continue-button:hover {
+    transform: translateY(-2px);
+}
+
+.track-button:hover {
+    box-shadow: 0 6px 20px rgba(0, 176, 155, 0.4);
+}
+
+.continue-button:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+.track-button:active, .continue-button:active {
+    transform: translateY(1px);
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form id="checkoutForm">
+            <div class="section delivery-section">
+                <h2>Delivery Address</h2>
+                <div class="input-group">
+                    <input type="text" id="address" placeholder="Complete Address" required>
+                    <input type="text" id="landmark" placeholder="Landmark (Optional)">
+                    <div class="address-row">
+                        <input type="text" id="city" placeholder="City" required>
+                        <input type="text" id="pincode" placeholder="Pincode" required maxlength="6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section payment-section">
+                <h2>Payment Method</h2>
+                <div class="payment-options">
+                    <div class="payment-option" data-method="upi">
+                        <div class="payment-header">
+                            <span class="payment-icon">💳</span>
+                            <span>UPI</span>
+                        </div>
+                        <div class="payment-content hidden">
+                            <input type="text" placeholder="Enter UPI ID" id="upiId">
+                        </div>
+                    </div>
+
+                    <div class="payment-option" data-method="card">
+                        <div class="payment-header">
+                            <span class="payment-icon">💳</span>
+                            <span>Credit/Debit Card</span>
+                        </div>
+                        <div class="payment-content hidden">
+                            <input type="text" placeholder="Card Number" maxlength="16">
+                            <div class="card-details">
+                                <input type="text" placeholder="MM/YY" maxlength="5">
+                                <input type="text" placeholder="CVV" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-option" data-method="cod">
+                        <div class="payment-header">
+                            <span class="payment-icon">💵</span>
+                            <span>Cash on Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Items Total</span>
+                    <span>₹499</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery Fee</span>
+                    <span>₹40</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total Amount</span>
+                    <span>₹539</span>
+                </div>
+            </div>
+
+            <button type="submit" class="place-order-btn">Place Order • ₹539</button>
+        </form>
+    </div>
+    <script src="checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="cart-page">
+        <h1>Your Cart</h1>
+        
+        <div class="cart-container">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&auto=format" alt="Book 1" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <div>
+                            <h3>The Art of Programming</h3>
+                            <p class="cart-item-author">by Robert C. Martin</p>
+                            <p class="cart-item-price">₹599</p>
+                        </div>
+                        <div class="cart-item-controls">
+                            <div class="quantity-controls">
+                                <button class="quantity-btn">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn">+</button>
+                            </div>
+                            <button class="remove-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                </svg>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=500&auto=format" alt="Book 2" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <div>
+                            <h3>Clean Code</h3>
+                            <p class="cart-item-author">by Robert C. Martin</p>
+                            <p class="cart-item-price">₹499</p>
+                        </div>
+                        <div class="cart-item-controls">
+                            <div class="quantity-controls">
+                                <button class="quantity-btn">-</button>
+                                <span class="quantity">2</span>
+                                <button class="quantity-btn">+</button>
+                            </div>
+                            <button class="remove-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                </svg>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <button class="add-more-btn">Add More Items</button>
+            </div>
+
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-items">
+                    <div class="summary-item subtotal">
+                        <span>Subtotal</span>
+                        <span>₹1,597</span>
+                    </div>
+                    <div class="summary-item tax">
+                        <span>GST (5%)</span>
+                        <span>₹79.85</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span>₹1,676.85</span>
+                    </div>
+                </div>
+                <button class="checkout-button">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

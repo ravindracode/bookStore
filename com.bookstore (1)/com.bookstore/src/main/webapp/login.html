@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Library - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80">
+  </head>
+  <body>
+    <div class="container">
+      <div id="loginForm" class="form-container">
+        <div class="login-form">
+          <h1>Welcome Back!</h1>
+          <form action="login" method="post">
+            <div class="input-group">
+              <input type="email" id="loginEmail" name="Email">
+            </div>
+            <div class="input-group">
+              <input type="password" id="loginPassword" name="Password">
+            </div>
+            <button type="submit">Login</button>
+            <p class="form-footer">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+          </form>
+        </div>
+      </div>
+
+      <div id="signupForm" class="form-container hidden">
+        <div class="login-form">
+          <h1>Create Account</h1>
+          <form>
+            <div class="input-group">
+              <input type="text" id="signupName" required placeholder="Full Name">
+            </div>
+            <div class="input-group">
+              <input type="email" id="signupEmail" required placeholder="Email">
+            </div>
+            <div class="input-group">
+              <input type="password" id="signupPassword" required placeholder="Password">
+            </div>
+            <div class="input-group">
+              <input type="password" id="confirmPassword" required placeholder="Confirm Password">
+            </div>
+            <button type="submit">Sign Up</button>
+            <p class="form-footer">Already have an account? <a href="#" id="showLogin">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="loading-overlay">
+      <div class="loader"></div>
+    </div>
+    <script type="module" src="loginn.js"></script>
+  </body>
+</html>
